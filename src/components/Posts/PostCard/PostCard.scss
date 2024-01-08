@@ -1,0 +1,185 @@
+@import '../../../colors';
+
+.single-post {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    -webkit-box-shadow: 1px 4px 24px 0px rgba(49, 49, 49, 0.24);
+    -moz-box-shadow: 1px 4px 24px 0px rgba(49, 49, 49, 0.24);
+     box-shadow: 1px 4px 24px 0px rgba(49, 49, 49, 0.24);
+     border-radius: 5px;
+     transition: .3s ease;
+
+    //  &:hover {
+    //     background-color:#2c3136ad;
+    //  }
+
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 5px;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+
+           .user-image {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                z-index: 3;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%; 
+                    
+                }
+
+                .img-placeholder {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    &:first-child {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 43px;
+                    height: 43px;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transform: translate(-1.5px, -2px);
+                    border-radius: 50%;
+                    background-color: $btnColorDark;                
+                }
+            }  
+        }
+
+        .share-button {
+            display: flex;
+            margin-right: 7px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+        padding: 10px 0;
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #fff;
+        width: 100%;
+        white-space: pre-wrap;
+        word-break: break-all;
+        cursor: pointer;
+
+        .post-text{
+            display: none;
+        }
+
+        p {
+            padding: 0 0 10px 5px;
+        }
+
+        .at-sign {
+            color: rgba(65, 65, 209, 0.678);
+        }
+
+        .collapse-content {
+            color: $secondaryHover;
+            cursor: pointer;
+            font-weight: 600;
+          
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        .media-container {
+            display: flex;
+        }
+    }
+
+    &__info {
+        padding: 5px 10px;
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            color: #000;
+        
+    
+        &__left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1rem;
+            color: #fff!important;
+            .heartBtn, .chat {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                span {
+                    font-size: .75rem;
+                    color: #fff;
+                }
+            }      
+    
+            .btn {
+                cursor: pointer;
+    
+                &.active{
+                    color: rgb(207, 48, 48)
+                }
+            }
+            button {
+                border: none;
+                outline: none;
+                background-color: $followBtn;
+                color: #fff;
+                font-size: 1.2rem;
+                border-radius: 5px;
+                padding: 10px;
+                cursor: pointer;
+                transition: .2s ease-in;
+    
+                &:hover {
+                    background-color: $followBtnHover;
+                }
+            }
+        }
+    
+        &__right {
+            .created-at{
+                font-size: .75rem;
+                color: #fff;
+            }
+        }
+    
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .single-post {
+        padding: 10px 0;
+    }
+}

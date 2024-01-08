@@ -1,0 +1,76 @@
+a {
+    color: #fff;
+    text-decoration: none;
+    .wrapper{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        transition: .3s ease;
+    
+        .box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .3s ease-in-out;
+    
+            &:hover .postStats {
+                z-index: 3;
+                opacity: 1;
+            }
+    
+            &:hover img {
+                transform: scale(1.09);
+            }
+    
+                img {
+                    position: absolute;
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    transition: .3s ease-in-out;
+                    z-index: 2;
+                }
+    
+                .postPlaceHolder {
+                    width: 200px;
+                    height: 200px;
+                    background-color: #66646434;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 5rem;
+                }
+    
+                .postStats {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #66646479;
+                    backdrop-filter: blur(3px);
+                    border-radius: 10px;
+                    transition: .3s ease-in-out;
+                    opacity: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 50px;
+    
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        
+                        svg {
+                            font-size: 25px;
+                        }
+                    }
+                }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import "../../colors";
+
+.friendsList {
+    height: 425px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    z-index: 100;
+
+   .friend {
+    display: flex;
+    justify-content: center;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 3px;
+        transition: .3s ease-in-out;
+        border-radius: 50%;
+    
+        &:hover {
+            background-color: $btnColorDark;  
+        }
+        
+        .userImage{
+            display: flex;
+            position: relative;
+
+            .statusBadge {
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: greenyellow;
+                border-radius: 50%;
+                right: 0;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .avatarPlaceholder {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $btnColorDark;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                font-size: 1.3rem;
+            }
+        }
+      
+        
+    }
+   }
+}
+
+@media (max-width: 1250px) {
+    .friendsList{
+        align-items: center!important;
+        height: 200px;
+    }
+}
+
+@media (max-width: 800px) {
+    .friendsList{
+       width: 100%!important;
+       height: 100px;
+       align-items: flex-start!important;
+       
+       .friend {
+        width: 100%!important;
+        a {
+            width: 100%;
+            border-radius: 5px;
+        }
+       }
+    }
+}

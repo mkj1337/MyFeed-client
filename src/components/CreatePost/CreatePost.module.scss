@@ -1,0 +1,171 @@
+@import '../../colors';
+
+.createPost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: $primary;
+    height: fit-content;
+
+    &.border {
+        border: 1px solid $secondary;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+.top {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    border-bottom: 1px solid $tertiary;
+
+    .userImage {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        z-index: 3;
+
+        img {
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 50%; 
+        }
+
+        .imgPlaceholder {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            &:first-child {
+                font-size: 1.3rem;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 41px;
+            height: 41px;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: translate(-1.5px, -2px);
+            border-radius: 50%;
+            background-color: $btnColorDark;                
+        }
+    }  
+    
+   .textInput {
+    width: 100%;
+     textarea {
+        width: 100%;
+        min-height: 75px;
+        background-color: transparent;
+        border: none;
+        resize: none;
+        outline: none;
+        padding: 5px;
+        font-size: 1.1rem;
+        caret-color: #fff;
+        color: #fff;
+   
+    }
+
+    .previewContainer {
+        display: flex;
+        gap: 5px;
+    }
+
+    .imagePreview {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        max-height: 600px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        video {
+            width: 100%;
+            max-height: 800px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .closeBtn {
+            display: flex;
+            position: absolute;
+            padding: 2px;
+            font-size: 1.4rem;
+            background-color: $btnColorDark;
+            border-radius: 50%;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+   }
+}
+
+.textLength {
+    color: $tertiary;
+  
+}
+
+.maxLength {
+    color: rgb(228, 102, 102)!important;  
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+
+    .addMedia {
+        label {
+            display: flex;
+            cursor: pointer;
+        }
+        input {
+            display: none;
+        }
+    }
+
+    .submitPost {
+        width: 100px;
+        border: none;
+        background-color: $tertiary;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s ease;
+     
+        &:hover {
+            background-color: $tertiaryHover;
+        }
+
+        &:disabled {
+            background-color: $secondary;
+            cursor:not-allowed;
+        }
+    }
+}
+
+}
+
+@media (max-width: 800px) {
+    .createPost {
+        padding: 10px!important;
+    }
+}

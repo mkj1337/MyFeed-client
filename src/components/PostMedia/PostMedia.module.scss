@@ -1,0 +1,28 @@
+@import "../../colors";
+
+.mediaContent {
+    position: relative;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    max-height: 800px;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s ease;
+        &:hover {
+            opacity: .87;
+        }
+    }
+
+    video{
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}
+

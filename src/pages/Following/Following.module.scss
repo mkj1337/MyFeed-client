@@ -1,0 +1,36 @@
+@import '../../colors';
+
+.following {
+    color: #fff;
+  
+    .container {
+        padding: 10px 25px;
+        width: 700px;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .following{
+        padding-left: 0;
+
+        .container {
+            width: 600px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .following{
+        padding-left: 0;
+
+        .container {
+          width: 100%;
+          padding: 5px!important;
+        }
+    }
+}
+

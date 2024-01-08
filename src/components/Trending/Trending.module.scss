@@ -1,0 +1,52 @@
+@import "../../colors";
+
+.trending {
+    width: 290px;
+    height: fit-content;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    z-index: 3;
+
+    .trendingContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+        h1 {
+            letter-spacing: 0.1rem;
+        }
+
+        .trendingItem {
+            width: 75%;
+            padding: 15px 5px;
+            border-bottom: 1px solid $btnColorDark;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $btnColorDark;
+            }
+
+            .trendingTitle {
+                font-size: .9rem;
+                color: rgba(93, 169, 219, 0.932);
+            }
+
+            &:hover .trendingTitle {
+                text-decoration: underline;
+            }
+
+            .trendingQuantity {
+                font-size: .75rem;
+                color: $tertiaryHover;
+            }
+        }
+    }
+}
+
+@media (max-width: 1800px) {
+    .trending {
+        display: none;
+    }
+  }

@@ -1,0 +1,48 @@
+@import '../../colors';
+
+.category {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover button:not(:hover){
+    color: $tertiary;
+    border-bottom: 1px solid transparent!important;
+  }
+
+  button {
+    flex: 1;
+    background-color: transparent;
+    color: $tertiary;
+    font-size: 1.2rem;
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: .3s ease;
+    border-bottom: 1px solid transparent;
+
+
+    &:hover {
+      color: $tertiaryHover;
+      border-bottom: 1px solid $tertiaryHover;
+    }
+
+    &.active {
+      color: $tertiaryHover;
+      border-bottom: 1px solid $tertiaryHover
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .category {
+    position: sticky;
+    top: 67px;
+    z-index: 6;
+    background-color: $primary;
+  }
+}
+
+
+

@@ -1,0 +1,65 @@
+@import "../../colors";
+.popUp {
+    position: fixed;
+    display: flex;
+    top: 0;
+    flex-direction: column;
+    padding: 15px;
+    height: 100vh;
+    gap: 30px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    z-index: 150;
+    width: 100%;
+    right: 0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 25px;
+        width: fit-content;
+        height: fit-content;
+        gap: 30px;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        z-index: 150;
+        background-color: #000;
+        border: 1px solid #ffffff80;
+        
+    .controls{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+
+        button {
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+        }
+
+        &Reject {
+            background-color: rgba(255, 0, 0, 0.514);
+
+            &:hover {
+                background-color: rgba(255, 0, 0, 0.753);
+            }
+        }
+
+        &Accept {
+            background-color: rgba(0, 128, 0, 0.596);
+
+            &:hover {
+                background-color: rgba(0, 128, 0, 0.74);
+            }
+        }
+    }
+  }
+}

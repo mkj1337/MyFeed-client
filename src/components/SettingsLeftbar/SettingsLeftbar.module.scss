@@ -1,0 +1,39 @@
+@import "../../colors";
+
+.settingsLeftbar {
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+    border-right: 0.5px solid #66666623;
+   
+    .title {
+        width: 100%;
+        border-bottom: 0.5px solid #66666623;
+        padding: 10px;
+    }
+
+    .settingsType {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+ 
+        .settingsItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 15px 10px;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                background-color: #6666665e;            }
+           
+        }
+
+        .active {
+            background-color: #6666665e;
+        }
+    }
+}
+

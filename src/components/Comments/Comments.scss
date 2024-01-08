@@ -1,0 +1,165 @@
+@import "../../colors";
+
+.singleComment{
+    width: 100%;
+    overflow: hidden;
+    padding: 0 5px;
+
+    hr {
+        width: 100%;
+    }
+
+    .userComment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;     
+
+        .createdAt {
+            font-size: .7rem;
+        }
+
+        .userInfoComment {
+            display: flex;
+            align-items: center;
+            gap: 15px;   
+            text-decoration: none;
+            height: 40px;
+  
+            z-index: 3;
+            text-decoration: none;
+            color: #fff;
+
+                    
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        position: relative; 
+                    }
+
+                    .imgPlaceHolder {
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background-color: #22222280;
+
+                        &:first-child {
+                            font-size: 1.7rem;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        top: 5px;
+                        left: 0;
+                        z-index: -1;
+                        border-radius: 50%;
+                        background: linear-gradient(#e66465, rgb(255, 85, 113), rgb(255, 139, 139));
+                    }
+                }  
+        }
+
+        .comment{
+            padding: 5px 5px 10px 5px;
+            word-wrap: break-word;
+            font-size: .85rem;
+            cursor: pointer;
+        }
+
+        .media {
+            display: flex;
+            position: relative;
+            user-select: none;
+            img {
+               width: 100%;
+               border-radius: 5px;
+               cursor: pointer;
+            }
+
+            
+        }
+
+        .replies {
+            border-left: 2px solid $btnColorDark;
+            z-index: 100;
+            width: 100%;
+            padding-left: .5rem;
+            
+        }
+
+        
+        .comment-options {
+            display: flex;
+            font-size: .8rem;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+
+    }
+
+    @media (max-width: 1200px) {
+        .userComment {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 5px;
+    
+            .createdAt {
+                font-size: .7rem!important;
+            }
+    
+            .userInfoComment {
+                display: flex;
+                align-items: center;
+                gap: 15px;   
+                height: 40px;
+                        img {
+                            width: 30px!important;
+                            height: 30px!important;
+                            object-fit: cover;
+                            border-radius: 50%; 
+                            position: relative!important;
+                        }
+
+                        &::after {
+                            width: 30px!important;
+                            height: 30px!important;  
+                            position: absolute!important;
+                            top: 5px!important;
+                        }
+
+                    }  
+            }
+
+
+    .comments {
+        display: none;
+    }
+
+    .comments.active {
+        display: block;
+        position: absolute;
+        bottom: 149px;
+        max-height: 250px;
+
+        height: auto!important;
+        left: 0;
+        width: 100%!important;
+        z-index: 1000;
+        background-color: #333;
+    }
+
+    .singleComment {
+        padding: 5px
+    }
+}

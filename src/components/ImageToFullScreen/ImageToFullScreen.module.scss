@@ -1,0 +1,89 @@
+@import "../../colors";
+
+.imageToFull {
+    @include backDropBG;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    user-select: none;
+
+    .imageContainer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+    .image {
+        height: 90%;
+        
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        img {
+            width: 100%;
+            &:hover {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+    }
+
+    .btn {
+        display: flex;
+        position: absolute;
+        padding: 3px;
+        z-index: 100;
+        font-size: 2rem;
+        top: 50%;
+        color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s ease;
+   
+        &:hover {
+            background-color: $btnColorDark;
+        }
+
+        &Prev {
+            left: 50px;
+        }
+
+        &Next {
+            right: 50px;
+        }
+
+    }
+}
+
+
+}
+
+@media (max-width: 800px) {
+    .image {
+        width: 100%!important;
+
+        img {
+            width: 100%;
+            
+        }
+    }
+
+  
+}

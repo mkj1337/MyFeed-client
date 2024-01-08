@@ -1,0 +1,358 @@
+@import "../../colors";
+
+:root {
+    --bg: none;
+}
+
+.profile {
+    background-color: $primary!important;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+        
+    .container {
+        padding: 50px 25px;
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        position: relative;
+
+        .loader {
+            min-height: calc(100vh - 67px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .userProf {
+            display: flex;
+            gap: 50px;
+            position: relative;
+            padding: 70px 15px 15px 15px;
+            background: var(--bg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: #00000081;
+                backdrop-filter: blur(1px);
+                z-index: 0;
+            }
+
+            .profilePic {
+                width: 200px;
+                height: 200px;
+                position: relative;
+                z-index: 3;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                .avatarPlaceholder {
+                    width: 200px;
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    &:first-child {
+                        font-size: 4.3rem;
+                    }
+                }
+    
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 210px;
+                    height: 210px;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transform: translate(-5px, -5px);
+                    border-radius: 50%;
+                    background-color: $btnColorDark;                
+                }
+            }  
+            
+
+            .edit {
+                position: absolute;
+                right: 15px;
+                z-index: 3;
+                button {
+                    display: flex;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                    padding: 10px;
+                    border-radius: 50%;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: .3s ease-in-out;
+                    background-color: #000;
+                    &:hover {
+                        background-color: $btnColorDark;  
+                    }
+                }  
+            }
+
+            .userInfo {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                z-index: 3;
+                
+                .location {
+                    display: flex;
+                    align-items: start;
+                    gap: 5px;
+                    color: $tertiaryHover;
+
+                    span {
+                        font-size: 13px;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+    
+                    button {
+                        border: none;
+                        outline: none;
+                        color: #fff;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        font-weight: bold;
+                        transition: .2s ease-in;
+    
+                        &:first-child {
+                            background-color: $followBtn;
+                            width: 130px;
+                        }
+    
+                        &:first-child:hover {
+                            background-color: $followBtnHover;
+                        }
+    
+                        &:nth-child(2){
+                            background-color: $secondary;
+                        }
+    
+                        &:nth-child(2):hover {
+                            background-color: $secondaryHover;
+                        }
+                    }
+    
+                    .like {
+                        font-size: 2rem!important;
+                        cursor: pointer;
+                        color: #333;
+    
+                        &.active {
+                            color: rgb(207, 48, 48);
+                        }
+                    }
+    
+                }
+    
+                
+                .info {
+                    display: flex;
+                    gap: 10px;
+    
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .bio {
+                    max-width: 460px;
+                    font-size: .9rem;
+                    white-space: pre-wrap;
+                    word-break: break-all;
+                }
+            }
+
+            .socialMedia {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                
+                a{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 5px;
+                    font-size: 1.7rem;
+                    border-radius: 50%;
+                    transition: .1s ease;
+              
+              
+                    &:hover {
+                      background-color: $btnColorHover;
+                  }
+                }
+              }
+
+        }
+
+        hr{
+            margin: 35px 0;
+            border-bottom: none!important;
+            border: 0.5px solid #66666691;
+        }
+
+        .mediaPost {
+            position: relative;
+            width: 100%;
+            min-height: 246px;
+            display: grid;
+            gap: 10px;
+            justify-content: start;
+            grid-template-columns: repeat(auto-fit, 200px);
+
+            .loaderContainer {
+                grid-column: span 3;
+                display: flex;
+                padding-right: 50px;
+                align-items: center; 
+            }
+        }
+
+        .postsContainer {
+            display: flex;
+            justify-content: center;
+            .posts {
+                width: 700px;
+            }
+        }
+      
+    }
+}
+
+
+    @media (max-width: 1200px) {
+        .profile{
+            padding-left: 0;
+    
+            .container {
+                padding: 50px 0px!important;
+               
+                .profilePic {
+                    img {
+                        width: 100%!important;
+                        height: 100%;
+                        object-fit: cover;
+                   
+                    }
+                }  
+
+                .mediaPost {
+                    grid-template-columns: repeat(auto-fit, 200px);
+                    padding-left: 0!important;
+                }
+
+            }
+        }
+    }
+    
+    @media (max-width: 800px) {
+        .profile{
+            padding-top: 40px!important;
+    
+            .container {
+                padding: 30px 0!important;
+                align-items: center;
+                justify-content: center;
+                gap: 0!important;
+
+                .userProf {
+                    flex-direction: column;
+                    padding: 30px 20px;
+                    width: 100%;
+
+                    .edit {
+                        bottom: 115px;
+                    }
+                    
+                    .profilePic {
+                        width: 150px;
+                        height: 150px;
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        img {
+                            width: 100%!important;
+                            height: 100%!important;;
+                        }
+
+                                        
+                .avatarPlaceholder{
+                    width: 150px;
+                    height: 150px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    &:first-child {
+                        font-size: 4.3rem;
+                    }
+                }
+    
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 160px;
+                    height: 160px;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transform: translate(-5px, -5px);
+                    border-radius: 50%;
+                    background-color: $btnColorDark;                
+                }
+            }   
+        }
+
+                .mediaPost{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    padding-top: 15px!important;
+                }
+
+                .postsContainer {
+                    width: 100%;
+                    .posts {
+                        width: 100%;
+                    
+                    }
+                }
+            }
+        }
+    }

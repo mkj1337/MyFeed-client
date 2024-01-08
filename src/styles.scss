@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './colors';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $primary;
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+  width: 5px!important;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: $secondary;
+  border-radius: 5px;
+}
+
+.hashtag {
+  color: rgba(93, 169, 219, 0.932)!important;
+
+  &:hover {
+    text-decoration: underline!important;
+  }
+}
+
+hr {
+  margin: 10px 0!important;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.settings-layout__container {
+    position: absolute;
+    top: 67px;
+    left: 80px;
+    width: calc(100% - 80px);
+    height: calc(100vh - 67px);
+    display: flex;
+    background-color: inherit;
+    color: #fff;
+}
+
+.sideWrapper {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  flex: 10;
+  position: relative;
+}
+
+.close-btn,
+.edit-btn,
+.back-btn,
+.add-emoji,
+.add-gif,
+.addMedia,
+.addGif,
+.addEmoji {
+  cursor: pointer;
+  display: flex;
+  height: fit-content;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 5px;
+  transition: .1s ease;
+
+  &:hover {
+    background-color: $btnColorDark;
+}
+}
+
+
+.mode, 
+.editBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  padding: 5px;
+  border-radius: 50%;
+
+  h3 {
+    font-weight: normal !important ;
+  }
+
+  &:hover {
+    background-color: $btnColorDark;  
+}
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+.edit-btn {
+  font-size: 20px;
+  padding: 7px;
+}
+
+.gif-cap {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index: 5;
+  font-size: 1.2rem;
+  padding: 3px 10px;
+  display: flex;
+  border-radius: 5px;
+  background-color: #33333386;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+  a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      padding: 5px;
+      font-size: 1.7rem;
+      border-radius: 50%;
+      transition: .1s ease;
+
+
+      &:hover {
+        background-color: $btnColorHover;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .sideWrapper{
+  
+      .container {
+          width: 600px!important;
+      }
+      
+  }
+  .settings-layout__container {
+    left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  ::-webkit-scrollbar{
+    background-color: transparent;
+  }
+
+  .sideWrapper{
+      padding-left: 0;
+      .container {
+          width: 100%!important;
+      }
+  }
+
+  .settings-layout__container {
+    left: 0;
+  }
+}
+
+.EmojiPickerReact.epr-dark-theme {
+  --epr-bg-color: #000!important;
+}
+
+.GifPickerReact.gpr-dark-theme {
+  --gpr-bg-color: #000!important;
+}
+
+.Toastify__toast-theme--dark {
+  --toastify-color-dark: #000;
+}
+
+.Toastify__toast {
+  border: 1px solid rgba(49, 49, 49, 0.24);
+}
+
