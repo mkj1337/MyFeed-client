@@ -11,6 +11,11 @@ const Account = () => {
   const { setCurrentUser, currentUser } = useAuth();
 
   const deleteAccount = async () => {
+    if (currentUser?.email === 'admin@gmail.com') {
+      window.alert("You can't delete Admin account!");
+      return;
+    }
+
     try {
       await axios.delete('/api/auth/delete');
       setCurrentUser(null);
@@ -19,10 +24,6 @@ const Account = () => {
       console.log(err);
     }
   };
-
-  if (currentUser?.email === 'mik.jed2003@gmail.com') {
-    return null;
-  }
 
   return (
     <>
