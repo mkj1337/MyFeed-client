@@ -139,7 +139,7 @@ const CreatePost = ({ comment, parentId, border }: CreatePostProps) => {
           {currentUser?.userImg ? (
             <img src={currentUser?.userImg} alt="" />
           ) : (
-            <div className={styles.imgPlaceholder}>
+            <div className={styles.avatarPlaceholder}>
               <AiOutlineUser />
             </div>
           )}

@@ -55,6 +55,7 @@
                 height: 200px;
                 position: relative;
                 z-index: 3;
+                
                 img {
                     width: 100%;
                     height: 100%;
@@ -69,24 +70,13 @@
                     align-items: center;
                     justify-content: center;
                     border-radius: 50%;
+                    background-color: $btnColorDark;
 
                     &:first-child {
                         font-size: 4.3rem;
                     }
                 }
     
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 210px;
-                    height: 210px;
-                    top: 0;
-                    left: 0;
-                    z-index: -1;
-                    transform: translate(-5px, -5px);
-                    border-radius: 50%;
-                    background-color: $btnColorDark;                
-                }
             }  
             
 

@@ -33,30 +33,18 @@
             border-radius: 50%; 
         }
 
-        .imgPlaceholder {
+        .avatarPlaceholder {
             width: 40px;
             height: 40px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            background-color: $btnColorDark;    
+            align-items: center;
             border-radius: 50%;
 
             &:first-child {
                 font-size: 1.3rem;
             }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            width: 41px;
-            height: 41px;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transform: translate(-1.5px, -2px);
-            border-radius: 50%;
-            background-color: $btnColorDark;                
         }
     }  
     

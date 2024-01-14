@@ -181,7 +181,7 @@ const Post = () => {
                     {post?.userImg ? (
                       <img src={post?.userImg} alt="" loading="lazy" />
                     ) : (
-                      <div className={styles.imgPlaceholder}>
+                      <div className={styles.avatarPlaceholder}>
                         <AiOutlineUser />
                       </div>
                     )}

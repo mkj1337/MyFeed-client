@@ -120,7 +120,7 @@ const PostCard = ({ post }: any) => {
               {userImg ? (
                 <img src={userImg} alt="" />
               ) : (
-                <div className="img-placeholder">
+                <div className="avatarPlaceholder">
                   <AiOutlineUser />
                 </div>
               )}

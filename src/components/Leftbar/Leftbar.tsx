@@ -106,7 +106,7 @@ const Leftbar = () => {
               {currentUser?.userImg ? (
                 <img src={currentUser?.userImg} alt={``} />
               ) : (
-                <div className={styles.imgPlaceHolder}>
+                <div className={styles.avatarPlaceholder}>
                   <AiOutlineUser />
                 </div>
               )}
