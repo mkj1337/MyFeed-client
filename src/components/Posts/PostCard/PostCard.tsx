@@ -143,9 +143,13 @@ const PostCard = ({ post }: any) => {
           {postText && postText.length > 270 ? (
             <>
               {collapseContent ? (
-                <p dangerouslySetInnerHTML={{ __html: message }} />
+                <p
+                  className="desc"
+                  dangerouslySetInnerHTML={{ __html: message }}
+                />
               ) : (
                 <p
+                  className="desc"
                   dangerouslySetInnerHTML={{
                     __html: message.substring(0, 270),
                   }}
@@ -159,7 +163,10 @@ const PostCard = ({ post }: any) => {
               </span>
             </>
           ) : (
-            <p dangerouslySetInnerHTML={{ __html: purify.sanitize(message) }} />
+            <p
+              className="desc"
+              dangerouslySetInnerHTML={{ __html: purify.sanitize(message) }}
+            />
           )}
           <div className="media-container">
             {media.length > 0 &&
