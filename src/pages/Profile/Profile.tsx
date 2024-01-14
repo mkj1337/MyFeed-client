@@ -91,6 +91,7 @@ const Profile = () => {
 
       return filteredMedia;
     }
+    return [];
   };
 
   useEffect(() => {
@@ -234,7 +235,9 @@ const Profile = () => {
                 className={
                   category === CONTENT_TYPE.posts
                     ? styles.postsContainer
-                    : styles.mediaPost
+                    : getImages().length > 0
+                    ? styles.mediaPost
+                    : ''
                 }
               >
                 {postsError && <span>{postsError}</span>}
