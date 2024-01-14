@@ -72,7 +72,7 @@ export const EditPostModal = ({
         post_video:
           i.post_video === null
             ? null
-            : 'videos/' + i.post_video?.split('/')[7].split('.')[0],
+            : 'videos/' + i.post_video?.split('/')[8].split('.')[0],
       };
     });
 
@@ -86,8 +86,8 @@ export const EditPostModal = ({
         { post_media },
         { withCredentials: true }
       );
-      close(false);
-      setTimeout(() => navigate(-1), 150);
+      // close(false);
+      // setTimeout(() => navigate(-1), 150);
       toast.success(res.data.message);
     } catch (err) {
       console.log(err);
