@@ -21,9 +21,9 @@ const Signin = () => {
     e.preventDefault();
 
     if (isLoading) return;
-    
+
     try {
-      setIsLoading(true); 
+      setIsLoading(true);
       const res = await axios.post('/api/auth/signin', inputs, {
         withCredentials: true,
       });
@@ -53,6 +53,11 @@ const Signin = () => {
         <span>My</span>Feed
       </h1>
       <div className={styles.container}>
+        <p>
+          <span>Test Account:</span>
+          <br />
+          email: admin@gmail.com <br /> password: Admin123
+        </p>
         <h2>Sign In</h2>
 
         <form onSubmit={handleSignin}>
