@@ -119,10 +119,6 @@ export const EditProfileModal = ({
     }
   };
 
-  const handleSocialMedia = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSocialMedia((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
   useEffect(() => {
     if (activeModal) {
       document.body.style.overflow = 'hidden';
