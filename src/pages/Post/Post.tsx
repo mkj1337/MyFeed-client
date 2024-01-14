@@ -131,7 +131,7 @@ const Post = () => {
 
   dayjs.extend(relativeTime);
   dayjs.extend(customParseFormat);
-
+  
   return (
     <>
       <SecondModal
@@ -146,7 +146,7 @@ const Post = () => {
           close={setEditPost}
           isOpen={editPost}
           postId={post.id}
-          postSrc={post?.postImg || post?.postGif}
+          postMedia={post?.media}
           postDesc={post?.postText}
         />
       )}

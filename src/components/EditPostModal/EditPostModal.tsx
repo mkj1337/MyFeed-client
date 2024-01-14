@@ -8,19 +8,27 @@ import { useNavigate } from 'react-router-dom';
 import { scaleVariants } from '../../animation/Animations';
 import { toast } from 'react-toastify';
 
-type EditPostModalProps = {
+interface postMedia {
+  id: number;
+  post_gif?: string;
+  post_id?: string;
+  post_img?: string;
+  post_video?: string;
+}
+
+interface EditPostModalProps {
   close: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
   postId: number | string;
-  postSrc?: string | null;
+  postMedia?: postMedia[];
   postDesc?: string;
-};
+}
 
 export const EditPostModal = ({
   close,
   isOpen,
   postId,
-  postSrc,
+  postMedia,
   postDesc,
 }: EditPostModalProps) => {
   const [text, setDesc] = useState<string>(postDesc ? postDesc : '');
@@ -39,14 +47,11 @@ export const EditPostModal = ({
     try {
       const data = new FormData();
       data.append('text', text);
-      if (postSrc) {
-        data.append('public_id', postSrc);
+      if (postMedia) {
+        data.append('post_media', JSON.stringify(postMedia));
       }
       const res = await axios.post(`/api/posts/edit/${postId}`, data, {
         withCredentials: true,
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
       });
       close(false);
       toast.success(res.data.message);
@@ -56,14 +61,29 @@ export const EditPostModal = ({
     }
   };
 
+  const media = postMedia
+  ?.filter((d: any) => d.post_img || d.post_video)
+  .map((i: any) => {
+    return {
+      post_img:
+        i.post_img === null
+          ? null
+          : 'photos/' + i.post_img?.split('/')[8].split('.')[0],
+      post_video:
+        i.post_video === null
+          ? null
+          : 'photos/' + i.post_video?.split('/')[8].split('.')[0],
+    };
+  });
+
   const handleDelete = async (e: FormEvent) => {
     e.preventDefault();
 
-    const public_id = postSrc ? postSrc : null;
+    const post_media = media ? media : null;
     try {
       const res = await axios.post(
         `/api/posts/delete/${postId}`,
-        { public_id },
+        { post_media },
         { withCredentials: true }
       );
       close(false);
@@ -115,7 +135,7 @@ export const EditPostModal = ({
             <button onClick={handleDelete} className="delete">
               DELETE POST
             </button>
-            <button className='submit' type="submit" disabled={isDisabled()}>
+            <button className="submit" type="submit" disabled={isDisabled()}>
               SUBMIT CHANGES
             </button>
           </motion.form>
