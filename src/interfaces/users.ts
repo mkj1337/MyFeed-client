@@ -1,5 +1,6 @@
 export interface CurrentUserProps {
   id: string;
+  email: string;
   name: string;
   username: string;
   userImg?: string;

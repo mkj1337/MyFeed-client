@@ -8,7 +8,7 @@ import PopUp from '../../../components/PopUp/PopUp';
 const Account = () => {
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
-  const { setCurrentUser } = useAuth();
+  const { setCurrentUser, currentUser } = useAuth();
 
   const deleteAccount = async () => {
     try {
@@ -19,6 +19,11 @@ const Account = () => {
       console.log(err);
     }
   };
+
+  if (currentUser?.email === 'mik.jed2003@gmail.com') {
+    return null;
+  }
+
   return (
     <>
       <PopUp

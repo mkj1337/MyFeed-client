@@ -12,6 +12,7 @@ import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai';
 import { scaleVariants } from '../../animation/Animations';
 import EditPictureModal from '../EditPictureModal/EditPictureModal';
 import { toast } from 'react-toastify';
+import SocialMediaLinks from './SocialMediaLinks';
 
 type EditProfileModalProps = {
   close: React.Dispatch<React.SetStateAction<boolean>>;
@@ -32,7 +33,7 @@ export const EditProfileModal = ({
   const [bio, setBio] = useState<string>(currentUser?.bio || '');
   const [username, setUsername] = useState<string>(currentUser?.username || '');
   const [location, setLocation] = useState<string>(currentUser?.location || '');
-  const [socialMedia, setSociaMedia] = useState({
+  const [socialMedia, setSocialMedia] = useState({
     instagram: currentUser?.instagram_url || '',
     x: currentUser?.x_url || '',
     youtube: currentUser?.youtube_url || '',
@@ -119,7 +120,7 @@ export const EditProfileModal = ({
   };
 
   const handleSocialMedia = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSociaMedia((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setSocialMedia((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   useEffect(() => {
@@ -276,33 +277,24 @@ export const EditProfileModal = ({
                 />
               </label>
               <hr />
-              <label className="social_media">
-                <AiOutlineInstagram size={25} />
-                <input
-                  type="url"
-                  value={socialMedia.instagram}
-                  onChange={handleSocialMedia}
-                  name="instagram"
-                />
-              </label>
-              <label className="social_media">
-                <AiOutlineYoutube size={25} />
-                <input
-                  type="url"
-                  value={socialMedia.youtube}
-                  onChange={handleSocialMedia}
-                  name="youtube"
-                />
-              </label>
-              <label className="social_media">
-                <AiOutlineLinkedin size={25} />
-                <input
-                  type="url"
-                  value={socialMedia.x}
-                  onChange={handleSocialMedia}
-                  name="x"
-                />
-              </label>
+              <SocialMediaLinks
+                name="instagram"
+                value={socialMedia.instagram}
+                Icon={AiOutlineInstagram}
+                setSocials={setSocialMedia}
+              />
+              <SocialMediaLinks
+                name="youtube"
+                value={socialMedia.youtube}
+                Icon={AiOutlineYoutube}
+                setSocials={setSocialMedia}
+              />
+              <SocialMediaLinks
+                name="linkedin"
+                value={socialMedia.x}
+                Icon={AiOutlineLinkedin}
+                setSocials={setSocialMedia}
+              />
               <hr />
             </form>
             <div className="buttons">
