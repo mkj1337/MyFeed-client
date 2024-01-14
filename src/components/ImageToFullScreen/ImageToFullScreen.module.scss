@@ -22,20 +22,11 @@
         height: 100%;
         
     .image {
-        height: 90%;
-        
+        height: 85%;
+        width: fit-content;
         display: flex;
         justify-content: center;
         position: relative;
-
-        img {
-            width: 100%;
-            &:hover {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
     }
 
     .closeBtn {
@@ -71,10 +62,9 @@
 
     }
 }
-
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
     .image {
         width: 100%;
         height: 100%;
