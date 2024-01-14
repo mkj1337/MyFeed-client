@@ -98,7 +98,7 @@ const CreatePost = ({ comment, parentId, border }: CreatePostProps) => {
       );
 
       toast.success(res.data.message);
-      navigate(`/post/${res.data.postId}`);
+      !comment ? navigate(`/post/${res.data.postId}`) : navigate(0);
     } catch (err: any) {
       toast.error(err.response.data.message);
     }
