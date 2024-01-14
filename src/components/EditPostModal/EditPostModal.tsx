@@ -62,19 +62,19 @@ export const EditPostModal = ({
   };
 
   const media = postMedia
-  ?.filter((d: any) => d.post_img || d.post_video)
-  .map((i: any) => {
-    return {
-      post_img:
-        i.post_img === null
-          ? null
-          : 'photos/' + i.post_img?.split('/')[8].split('.')[0],
-      post_video:
-        i.post_video === null
-          ? null
-          : 'photos/' + i.post_video?.split('/')[8].split('.')[0],
-    };
-  });
+    ?.filter((d: any) => d.post_img || d.post_video)
+    .map((i: any) => {
+      return {
+        post_img:
+          i.post_img === null
+            ? null
+            : 'photos/' + i.post_img?.split('/')[8].split('.')[0],
+        post_video:
+          i.post_video === null
+            ? null
+            : 'videos/' + i.post_video?.split('/')[8].split('.')[0],
+      };
+    });
 
   const handleDelete = async (e: FormEvent) => {
     e.preventDefault();
