@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import './CategoryButtons.scss';
+import styles from './CategoryButtons.module.scss';
+import { CONTENT_TYPE } from '../../constants';
 
 interface CategoryButtonsProps {
   setCategory: React.Dispatch<React.SetStateAction<string>>;
@@ -26,19 +27,19 @@ const CategoryButtons = ({
 
   useEffect(() => {
     window.scroll(0, 0);
-}, [refresh, category]);
+  }, [refresh, category]);
 
   return (
-    <div className="category">
+    <div className={styles.category}>
       <button
-        onClick={() => handleClick('posts')}
-        className={category === 'posts' ? 'active' : ''}
+        onClick={() => handleClick(CONTENT_TYPE.posts)}
+        className={category === CONTENT_TYPE.posts ? styles.active : ''}
       >
         {first_cat ? first_cat : 'Posts'}
       </button>
       <button
         onClick={() => handleClick(seconds_cat || 'Media')}
-        className={category === seconds_cat ? 'active' : ''}
+        className={category === seconds_cat ? styles.active : ''}
       >
         {seconds_cat ? 'Media' : 'photos'}
       </button>
