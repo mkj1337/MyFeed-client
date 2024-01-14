@@ -72,7 +72,7 @@ export const EditPostModal = ({
         post_video:
           i.post_video === null
             ? null
-            : 'videos/' + i.post_video?.split('/')[8].split('.')[0],
+            : 'videos/' + i.post_video?.split('/')[8]?.split('.')[0],
       };
     });
 
