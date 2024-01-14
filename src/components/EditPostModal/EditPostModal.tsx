@@ -86,8 +86,8 @@ export const EditPostModal = ({
         { post_media },
         { withCredentials: true }
       );
-      // close(false);
-      // setTimeout(() => navigate(-1), 150);
+      close(false);
+      setTimeout(() => navigate(-1), 150);
       toast.success(res.data.message);
     } catch (err) {
       console.log(err);
