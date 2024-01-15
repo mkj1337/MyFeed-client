@@ -112,7 +112,7 @@ const Post = () => {
     const fetchComments = async () => {
       try {
         const { data } = await axios.get(
-          `/api/posts/post/comments/${post?.id}`
+          `/api/posts/post/comments/${post.id}`
         );
         setComments(data);
         setIsNewComment(false);
