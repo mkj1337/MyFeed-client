@@ -242,7 +242,7 @@ const Post = () => {
                   />
                 )}
                 <div
-                  className="media-container"
+                  className={styles.mediaContainer}
                   onClick={(e) => handleImageToFullScreen(e)}
                 >
                   {post?.media.length > 0 &&
@@ -250,7 +250,8 @@ const Post = () => {
                       <PostMedia
                         key={m.id}
                         {...m}
-                        setCurrentIndex={() => setCurrentIndex(index)}
+                        setCurrentIndex={setCurrentIndex}
+                        index={index}
                       />
                     ))}
                 </div>

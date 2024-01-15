@@ -77,6 +77,7 @@ const Profile = () => {
         return acc + images.length;
       }, 0);
     }
+    return 0;
   };
 
   const getImages = () => {
@@ -246,7 +247,7 @@ const Profile = () => {
                     <div className={styles.loaderContainer}>
                       <Loader />
                     </div>
-                  ) : posts?.length > 0 ? (
+                  ) : posts?.media?.length > 0 ? (
                     getImages().map((post: any) => (
                       <Media key={post.id} {...post} />
                     ))

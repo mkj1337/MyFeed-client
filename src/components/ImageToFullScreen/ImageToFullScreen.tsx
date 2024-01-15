@@ -53,7 +53,10 @@ const ImageToFullScreen = ({
           onClick={() => close(false)}
         >
           <div className={styles.imageContainer}>
-            <div className={`close-btn ${styles.closeBtn}`} onClick={() => close(false)}>
+            <div
+              className={`close-btn ${styles.closeBtn}`}
+              onClick={() => close(false)}
+            >
               <IoClose />
             </div>
             <div
@@ -64,7 +67,7 @@ const ImageToFullScreen = ({
               <img
                 src={
                   images[currentIndex || 0].post_img ||
-                  images[currentIndex || 0].post_gif 
+                  images[currentIndex || 0].post_gif
                 }
                 alt=""
               />

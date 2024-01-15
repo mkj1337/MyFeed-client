@@ -26,4 +26,6 @@ export interface PostMediaProps {
   post_gif?: string;
   post_img?: string;
   post_video?: string;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  index: number;
 }

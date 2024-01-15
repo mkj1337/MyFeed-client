@@ -47,8 +47,6 @@
             }
         }
 
-   
-
         .userInfo {
             display: flex;
             justify-content: space-between;
@@ -139,6 +137,11 @@
                 .at-sign {
                     color: rgba(129, 144, 187, 0.808);
                 }
+            }
+
+            .mediaContainer {
+                display: flex;
+                gap: 3px;
             }
         }
 
