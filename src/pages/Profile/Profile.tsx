@@ -247,7 +247,7 @@ const Profile = () => {
                     <div className={styles.loaderContainer}>
                       <Loader />
                     </div>
-                  ) : posts?.media?.length > 0 ? (
+                  ) : getImages().length > 0 ? (
                     getImages().map((post: any) => (
                       <Media key={post.id} {...post} />
                     ))
