@@ -86,24 +86,13 @@
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          background-color: #22222280;
+          background-color: $btnColorDark;
 
           &:first-child {
             font-size: 1.3rem;
           }
         }
 
-        &::after {
-          content: '';
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          top: 10px;
-          left: 20px;
-          z-index: -1;
-          border-radius: 50%;
-          background: linear-gradient(#1e1e1b, #575b56, #7c7e7a);
-        }
       }
     }
    }

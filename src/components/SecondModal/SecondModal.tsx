@@ -53,7 +53,7 @@ const SecondModal = ({
               </div>
             </div>
             <hr />
-            <ul className="followers">
+            <ul className={styles.users}>
               {users?.length > 0 &&
                 users.map((user) => (
                   <li className={styles.users} key={user.id}>
