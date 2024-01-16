@@ -59,7 +59,7 @@ const SecondModal = ({
                   <li className={styles.users} key={user.id}>
                     <Link
                       to={`/profile/${user.username}`}
-                      className={`${styles.link} ${styles.userInfo}`}
+                      className={`${styles.link} ${styles.user}`}
                       onClick={() => close(false)}
                     >
                       {user.userImg ? (
