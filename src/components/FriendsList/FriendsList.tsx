@@ -12,6 +12,7 @@ interface FriendsListProps {
 }
 
 const FriendsList = ({ friends, isFriendsLoading }: FriendsListProps) => {
+  console.log(isFriendsLoading);
   return (
     <div className={styles.friendsList}>
       {isFriendsLoading &&
@@ -21,12 +22,14 @@ const FriendsList = ({ friends, isFriendsLoading }: FriendsListProps) => {
           <motion.div
             variants={buttonVariants}
             whileHover="hover"
-          className={styles.friend}
+            className={styles.friend}
             key={friend.id}
           >
             <NavLink
               to={`/profile/${friend?.username}`}
-              className={({ isActive }) => (isActive ? styles.active : undefined)}
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
             >
               <div className={styles.userImage}>
                 <div className={styles.statusBadge}></div>
