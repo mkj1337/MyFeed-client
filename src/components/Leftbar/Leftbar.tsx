@@ -133,7 +133,7 @@ const Leftbar = () => {
                 whileHover="hover"
                 className={styles.item}
               >
-                <NavLink to="/following" onClick={handleMenu}>
+                <NavLink to="/following" className={({isActive}) => isActive ? styles.active : undefined} onClick={handleMenu}>
                   <IoPlayOutline className={styles.icon} />
                   <h3>Following</h3>
                 </NavLink>

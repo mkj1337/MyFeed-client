@@ -1,6 +1,6 @@
 @import '../../../colors';
 
-.single-post {
+.singlePost {
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -10,11 +10,7 @@
      border-radius: 5px;
      transition: .3s ease;
 
-    //  &:hover {
-    //     background-color:#2c3136ad;
-    //  }
-
-    &__top{
+    .userInfo{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,7 +23,7 @@
             text-decoration: none;
             color: #fff;
 
-           .user-image {
+           .userImage {
                 width: 40px;
                 height: 40px;
                 position: relative;
@@ -57,7 +53,7 @@
             }  
         }
 
-        .share-button {
+        .shareButton {
             display: flex;
             margin-right: 7px;
             font-size: 1.2rem;
@@ -65,7 +61,7 @@
         }
     }
 
-    &__content {
+    .content {
         padding: 10px 0;
         font-size: 0.9rem;
         text-decoration: none;
@@ -98,13 +94,13 @@
             }
         }
 
-        .media-container {
+        .mediaContainer {
             display: flex;
             gap: 3px;
         }
     }
 
-    &__info {
+    .postInfo {
         padding: 5px 10px;
         .buttons {
             display: flex;
@@ -114,7 +110,7 @@
             color: #000;
         
     
-        &__left {
+        .buttonsLeft{
             display: flex;
             align-items: center;
             gap: 20px;
@@ -155,8 +151,8 @@
             }
         }
     
-        &__right {
-            .created-at{
+        .buttonsRight {
+            .createdAt{
                 font-size: .75rem;
                 color: #fff;
             }

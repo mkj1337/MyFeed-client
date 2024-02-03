@@ -1,5 +1,9 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { renderToString } from 'react-dom/server';
+import _ from 'underscore';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface ProtectedRouteProps {
   children: React.ReactElement;
@@ -15,9 +19,7 @@ export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   return children;
 };
 
-import { renderToString } from 'react-dom/server';
 
-import _ from 'underscore';
 export const generateRandomNum = (min: number, max: number): number =>
   _.shuffle([-1, 1])[0] * Math.floor(Math.random() * (max - min)) + min;
 
@@ -66,9 +68,6 @@ export const replaceMessage = (data: any = '') => {
 
   return message;
 };
-
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();

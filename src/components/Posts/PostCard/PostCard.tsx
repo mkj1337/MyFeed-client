@@ -1,3 +1,4 @@
+import styles from './PostCard.module.scss';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -12,7 +13,6 @@ import { AiOutlineUser } from 'react-icons/ai';
 import axios from 'axios';
 import purify from 'dompurify';
 
-import './PostCard.scss';
 import { replaceMessage } from '../../../utils/utils';
 import ShareModal from '../../ShareModal/ShareModal';
 import PostMedia from '../../PostMedia/PostMedia';
@@ -92,12 +92,6 @@ const PostCard = ({ post }: any) => {
 
   const message = replaceMessage(postText);
 
-  // const handleImageToFullScreen = (e: React.MouseEvent) => {
-  //   if (e.target instanceof HTMLImageElement) {
-  //     setShowImageFull(true);
-  //   }
-  // };
-
   dayjs.extend(relativeTime);
   dayjs.extend(customParseFormat);
 
@@ -112,15 +106,15 @@ const PostCard = ({ post }: any) => {
         exit={{ y: -10, opacity: 0 }}
         transition={{ duration: 0.1 }}
         key={post.id}
-        className="single-post"
+        className={styles.singlePost}
       >
-        <div className="single-post__top">
+        <div className={styles.userInfo}>
           <Link to={`/profile/${username}`}>
-            <div className="user-image">
+            <div className={styles.userImage}>
               {userImg ? (
                 <img src={userImg} alt="" />
               ) : (
-                <div className="avatarPlaceholder">
+                <div className={styles.avatarPlaceholder}>
                   <AiOutlineUser />
                 </div>
               )}
@@ -128,7 +122,7 @@ const PostCard = ({ post }: any) => {
             <span>{name}</span>
           </Link>
           <div
-            className="share-button"
+            className={styles.shareButton}
             onMouseEnter={handleShare}
             onMouseLeave={() => setShowShare(false)}
           >
@@ -139,17 +133,17 @@ const PostCard = ({ post }: any) => {
             )}
           </div>
         </div>
-        <Link to={`/post/${postId}`} className="single-post__content">
+        <Link to={`/post/${postId}`} className={styles.content}>
           {postText && postText.length > 270 ? (
             <>
               {collapseContent ? (
                 <p
-                  className="desc"
+                  className={styles.desc}
                   dangerouslySetInnerHTML={{ __html: message }}
                 />
               ) : (
                 <p
-                  className="desc"
+                  className={styles.desc}
                   dangerouslySetInnerHTML={{
                     __html: message.substring(0, 270),
                   }}
@@ -164,38 +158,38 @@ const PostCard = ({ post }: any) => {
             </>
           ) : (
             <p
-              className="desc"
+              className={styles.desc}
               dangerouslySetInnerHTML={{ __html: purify.sanitize(message) }}
             />
           )}
-          <div className="media-container">
+          <div className={styles.mediaContainer}>
             {media.length > 0 &&
               media.map((m: any) => <PostMedia key={m.id} {...m} />)}
           </div>
         </Link>
-        <div className="single-post__info">
-          <div className="buttons">
-            <div className="buttons__left">
-              <div className="heartBtn">
+        <div className={styles.postInfo}>
+          <div className={styles.buttons}>
+            <div className={styles.buttonsLeft}>
+              <div className={styles.heartBtn}>
                 <motion.div variants={buttonVariants} whileTap="tap">
                   {liked ? (
-                    <FaHeart className="btn active" onClick={disLike} />
+                    <FaHeart className={`${styles.btn} ${styles.active}`} onClick={disLike} />
                   ) : (
-                    <FaRegHeart className="btn" onClick={sendLike} />
+                    <FaRegHeart className={styles.btn} onClick={sendLike} />
                   )}
                 </motion.div>
                 {postLikes.length > 0 && <span>{postLikes.length}</span>}
               </div>
-              <div className="chat">
-                <BsChat className="btn" color="white" />
+              <div className={styles.chat}>
+                <BsChat className={styles.btn} color="white" />
                 {comments.length > 0 && <span>{comments.length}</span>}
               </div>
-              <div className="chat">
-                <FiRepeat className="btn" />
+              <div className={styles.chat}>
+                <FiRepeat className={styles.btn} />
               </div>
             </div>
-            <div className="buttons__right">
-              <div className="created-at">
+            <div className={styles.buttonsRight}>
+              <div className={styles.createdAt}>
                 {dayjs(createdAt).startOf('seconds').fromNow()}
               </div>
             </div>
