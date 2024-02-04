@@ -47,7 +47,6 @@ const SettingsLayout = () => {
   return (
     <div className="settings-layout__container">
       <SettingsLeftbar />
-
       <Outlet />
     </div>
   );

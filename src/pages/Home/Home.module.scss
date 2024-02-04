@@ -1,5 +1,16 @@
 @import '../../colors';
 
+.wrapper {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 .home {
     color: #fff;
   

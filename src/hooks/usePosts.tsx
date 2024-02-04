@@ -3,7 +3,7 @@ import axios from 'axios';
 
 type usePostsProps = {
   baseURL: string;
-  type?: string;
+  type?: "POST" | "GET";
   sendData?: any;
   dep?: any;
 };

@@ -5,13 +5,9 @@ import { IoClose } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useEffect } from 'react';
+import { User } from '../../interfaces/users';
 
-interface User {
-  id: number;
-  name: string;
-  username: string;
-  userImg?: string;
-}
+
 
 interface SecondModalProps {
   close: React.Dispatch<React.SetStateAction<boolean>>;

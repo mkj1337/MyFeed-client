@@ -12,3 +12,10 @@ export interface CurrentUserProps {
   youtube_url?: string;
   createdAt: Date;
 }
+
+export interface User {
+  id: number;
+  name: string;
+  username: string;
+  userImg?: string;
+}

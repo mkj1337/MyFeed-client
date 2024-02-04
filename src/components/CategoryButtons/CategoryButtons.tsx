@@ -5,8 +5,8 @@ import { CONTENT_TYPE } from '../../constants';
 interface CategoryButtonsProps {
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   category: string;
-  first_cat?: string;
-  seconds_cat?: string;
+  firstCat?: string;
+  secondCat?: string;
   setRefresh?: React.Dispatch<React.SetStateAction<boolean>>;
   refresh?: boolean;
 }
@@ -16,8 +16,8 @@ const CategoryButtons = ({
   category,
   setRefresh,
   refresh,
-  first_cat,
-  seconds_cat,
+  firstCat,
+  secondCat,
 }: CategoryButtonsProps) => {
   const handleClick = (cat: string) => {
     // window.scroll({ top: 0, left: 0, behavior: 'smooth' });
@@ -35,13 +35,13 @@ const CategoryButtons = ({
         onClick={() => handleClick(CONTENT_TYPE.posts)}
         className={category === CONTENT_TYPE.posts ? styles.active : ''}
       >
-        {first_cat ? first_cat : 'Posts'}
+        {firstCat ? firstCat : 'Posts'}
       </button>
       <button
-        onClick={() => handleClick(seconds_cat || 'Media')}
-        className={category === seconds_cat ? styles.active : ''}
+        onClick={() => handleClick(secondCat || 'Media')}
+        className={category === secondCat ? styles.active : ''}
       >
-        {seconds_cat ? 'Media' : 'photos'}
+        {secondCat ? 'Media' : 'photos'}
       </button>
     </div>
   );
